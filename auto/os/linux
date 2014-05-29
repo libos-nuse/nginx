@@ -49,6 +49,7 @@ fi
 ngx_feature="epoll"
 ngx_feature_name="NGX_HAVE_EPOLL"
 ngx_feature_run=yes
+ngx_feature_run_force_result="$ngx_force_have_epoll"
 ngx_feature_incs="#include <sys/epoll.h>"
 ngx_feature_path=
 ngx_feature_libs=
@@ -106,6 +107,7 @@ CC_AUX_FLAGS="$cc_aux_flags -D_GNU_SOURCE"
 ngx_feature="sendfile()"
 ngx_feature_name="NGX_HAVE_SENDFILE"
 ngx_feature_run=yes
+ngx_feature_run_force_result="$ngx_force_have_sendfile"
 ngx_feature_incs="#include <sys/sendfile.h>
                   #include <errno.h>"
 ngx_feature_path=
@@ -127,6 +129,7 @@ CC_AUX_FLAGS="$cc_aux_flags -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64"
 ngx_feature="sendfile64()"
 ngx_feature_name="NGX_HAVE_SENDFILE64"
 ngx_feature_run=yes
+ngx_feature_run_force_result="$ngx_force_have_sendfile64"
 ngx_feature_incs="#include <sys/sendfile.h>
                   #include <errno.h>"
 ngx_feature_path=
@@ -145,6 +148,7 @@ ngx_include="sys/prctl.h"; . auto/include
 ngx_feature="prctl(PR_SET_DUMPABLE)"
 ngx_feature_name="NGX_HAVE_PR_SET_DUMPABLE"
 ngx_feature_run=yes
+ngx_feature_run_force_result="$ngx_force_have_pr_set_dumpable"
 ngx_feature_incs="#include <sys/prctl.h>"
 ngx_feature_path=
 ngx_feature_libs=
