@@ -194,8 +194,8 @@ ngx_http_static_handler(ngx_http_request_t *r)
     }
 
 #if !(NGX_WIN32) /* the not regular files are probably Unix specific */
-
-    if (!of.is_file) {
+    /* FIXME: stat(2) of LKL returns invalid status ??? */
+    if (!of.is_file && 0) {
         ngx_log_error(NGX_LOG_CRIT, log, 0,
                       "\"%s\" is not a regular file", path.data);
 
